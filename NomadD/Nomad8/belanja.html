@@ -1,0 +1,155 @@
+<html>
+<script>
+    var produk = ['anggur', 'apel', 'jeruk']
+    var harga = [1000, 20000, 5000]
+    var kart=[]
+    var kartharga=[]
+    var kartqty=[]
+
+    
+    function printProd(a) {
+        var output = ''
+        for (var i = 0; i < a.length; i++) {
+            output += (i + 1) + ' ' + produk[i].toUpperCase() + 'Rp. ' + harga[i] + ',00 \n'
+        }
+        return output
+    }
+    function printcart(cartuser){
+        var output=''
+        if(kart.length==0){
+            return 'Cart is Empty'
+        }
+        for(var i=0;i<cartuser.length;i++){
+            output+=`${i+1}. ${kart[i]} dengan harga Rp. ${kartharga[i]},00
+            sebanyak ${kartqty[i]} dengan total harga $${kartharga[i]*kartqty[i]}\n`
+    }
+    return output
+}
+function printStruk(cartuser){
+    var output=printcart(cartuser+'==============================')
+    var totalbelanjaanharga=0
+    for(var i=0;i<cartuser.length;i++){
+        totalbelanjaanharga+=(kartqty[i]*kartharga[i])
+    }
+    output+=`total belanjaan kakak adalah Rp. ${totalbelanjaanharga},00`
+}
+
+    function totalQty(harga, jumlah) {
+        var total = harga * jumlah
+        var totalPrice = 0
+        totalPrice += total
+        return totalPrice
+    }
+
+    function shopping(listBarang) {
+        var totalPrice = 0
+        var output = ''
+        for (var i = 0; i < listBarang.length; i++) {
+            var qty = 0
+            var prc = 0
+            for (var j = 1; j < listBarang[j]; j++) {
+                if (listBarang[i] === listBarang[j]) {
+                    qty = Number(listJumlah[i]) + Number(listJumlah[j])
+                    var oneprice = listHarga[i]
+                    var items = listBarang[j]
+                } else if (listBarang[i] !== listBarang[j]) {
+                    qty = Number(listJumlah[i])
+                    var oneprice = listHarga[i]
+                    var items = listBarang[i]
+                }
+            }
+            output += 'Shop' + items + 'QTY' + qty + 'Kg, price is' + oneprice + 'total' + (qty * oneprice) + '\n'
+        }
+        return output
+
+    }
+
+    //function is above
+    //menu is below
+
+    alert(printProd(produk))
+    do {
+        var menuUtama = prompt('1.User\n2.Admin\n3.Exit')
+        if (menuUtama == 1) {
+            alert('Welcome to the user Page')
+            var userMenu = prompt('Choose Menu:\n1. Shopping\n2. Checkout \n3. Exit')
+            var out = '' 
+
+            do {
+                var konfirmasiUser=true
+                var pilihan = parseInt(prompt(printProd(produk) + '\nWhat do you wanna buy?'))
+                var jumlah = parseInt(prompt('Buy Quantity?'))
+                var ada=false
+                var index=0
+
+                for(var i=0;i<kart.length;i++){
+                    if(produk(pilihan-1)==kart[i]){
+                        ada=true
+                        index=i
+                    }
+                }
+                if(ada){
+                    kartqty[index]+=pilihan
+                }else{
+                    kart.push(produk[pilihan-1])
+                    kartharga.push(harga[pilihan-1])
+                    kartqty.push(jumlah)
+                }
+                konfirmasiUser=confirm('Belanja Lagi Gak?')
+                if(konfirmasiUser==false){
+                        alert(printcart(kart))
+                }
+
+            } while (konfirmasiUser);
+
+        } else if (menuUtama == 2) {
+            do {
+                var menuadmin = prompt('1.Add Data \n2. Update Data \n3. Delete Data \n4.Back to Menu')
+                if (menuadmin == 1) {
+                    do {
+                        var newProd = prompt('Enter New Product')
+                        var newprice = prompt('Enter Price')
+                        produk.push(newProd)
+                        harga.push(newprice)
+                        alert(printProd(produk))
+                        var konfirmasi1 = confirm('Wanna Keep Adding?')
+                    } while (konfirmasi1)
+
+                } else if (menuadmin == 2) {
+                    do {
+                        alert(printProd(produk))
+                        var menuUpdate = parseInt(prompt(printProd(produk)) + '\nPilih Produk')
+                        var updateProduk = prompt('Enter desired product name to be updated' + produk[menuUpdate - 1])
+                        var updateHarga = prompt('Enter new Price' + harga[menuUpdate - 1])
+                        var updateConfirm = confirm('Are you sure the product name is correct?' + produk[menuUpdate -
+                            1])
+
+                        if (updateConfirm == true) {
+                            produk.splice(menuUpdate - 1, 1, updateProduk)
+                            harga.splice(menuUpdate - 1, 1, updateHarga)
+                        } else {
+                            alert('Update Canceled')
+                        }
+                        var konfirmasi2 = confirm('Wanna re-Update?')
+
+
+                    } while (konfirmasi2)
+                } else if (menuadmin == 3) {
+                    var deletemenu = parseInt(prompt(printProd(produk)) + '\n Choose Product')
+                    var deleteconfirm = confirm('Are you sure you want to delete this product?')
+                    if (deleteconfirm == true) {
+                        produk.splice(deletemenu)
+                    } else {
+                        alert('Delete Canceled')
+                    }
+                    var konfirmasi3 = confirm('Wanna Delete')
+                } else if (menuadmin == 4) {
+                    konfirmasiAdmin = false
+                }
+                var konfirmasiAdmin = confirm('Back to Main Menu?')
+            } while (konfirmasiAdmin);
+        }
+    } while (true);
+</script>
+
+</html>

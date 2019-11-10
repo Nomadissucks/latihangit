@@ -1,0 +1,38 @@
+<html>
+    <script>
+        do{
+            var konfirmasi=true
+            var menu=prompt('Menu:\n 1. Belajar \n 2. Belanja')
+            if(menu==1){
+                var konfirmasi=true
+            }while(konfirmasi){
+
+            }
+            else if(menu==2){
+                alert('fitur belum tersedia')
+                konfirmasi=false
+            }else{
+                alert('Terima Kasih telah mengunjungi website kami.') 
+                konfirmasi=false 
+            }
+            
+        }while(konfirmasi){
+
+            //menu 1
+            //masuk ke menu belajar
+            
+            var menu1=prompt('Pengen Belajar apa? \n1. Luas Segitiga \n2. Luas Kotak')
+            if(menu1==1){
+                var alastria=parseInt(prompt('masukan alas segitiga '))
+                var tinggitria=parseInt(prompt('masukan tinggi segitiga '))
+                alert('Luas segitiga adalah '+(0.5*alastria*tinggitria)+'cm^2')
+            }else if(menu==2){
+                alert('fitur belum tersedia ')
+                
+            }else if(menu>2){
+                alert('anda salah input ')
+            }
+        }
+            
+    </script>
+</html>

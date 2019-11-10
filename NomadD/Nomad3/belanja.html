@@ -1,0 +1,38 @@
+<html>
+    <script>
+        var konfirmasi=true
+        while(konfirmasi){
+            var buah=prompt('beli buah apa? \n1. Apel Rp. 1000\n2. Jeruk Rp. 2000 \n3. Nangka Rp. 2000 \n4. Pepaya Rp. 1000')
+            var harga1=0
+            if(buah==1){
+                harga1=1000
+                var berat=parseInt(prompt('mau beli berapa '))
+                alert('anda harus bayar '+(harga1*berat))
+                konfirmasi=false
+            }else if(buah==2){
+                harga1=2000
+                var berat=parseInt(prompt('mau beli berapa '))
+                alert('anda harus bayar '+(harga1*berat))
+                konfirmasi=false
+            }else if(buah==3){
+                harga1=2000
+                var berat=parseInt(prompt('mau beli berapa '))
+                alert('anda harus bayar '+(harga1*berat))
+                konfirmasi=false
+            }else if(buah==4){
+                harga1=1000
+                var berat=parseInt(prompt('mau beli berapa '))
+                alert('anda harus bayar '+(harga1*berat))
+                konfirmasi=false
+            }else{
+                alert('anda salah input')
+                konfirmasi=confirm('apakah anda ingin belanja lagi? ')
+                if(konfirmasi){
+                    alert('ayo belanja lagi!')
+                } else{
+                    alert('anda miskin')
+                }
+            }
+        }
+            </script>
+            </html>

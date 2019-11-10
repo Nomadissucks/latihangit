@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h1>Masukan Nama Kamu</h1>
+        <br>
+        <input type="text" placeholder="Masukan Nama Anda" id="Nama"><br>
+        <input type="number" placeholder="Masukan usia Kamu" id="usia"><br><br>
+        <button onclick=klik1()>Klik Disini</button>
+    </center>
+</body>
+<script>
+    var klik1=()=>{
+        var nama=document.getElementById('Nama').value
+        var usia=document.getElementById('usia').value
+        var tuamuda=''
+        if (usia>30){
+            tuamuda='Tua'
+        }else{
+            tuamuda='Muda'
+        }
+        document.getElementsByTagName('h1')[0].innerHTML=`Nama Saya ${nama} saya ${tuamuda}.`
+        document.getElementsByTagName('h1')[0].style.color='indigo'
+    }
+</script>
+</html>

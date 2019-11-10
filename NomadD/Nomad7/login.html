@@ -1,0 +1,42 @@
+<html>
+    <script>
+        function cek(a){
+            for(let i=0;i<nama.length;i++){
+                if(nama[i]==a){
+                    return true
+                    
+                }
+                
+            }return false
+        }
+        alert('Selamat Datang di WEEbsite Kami')
+        var nama = ['Aldi', "riyman", 'zeintsu']
+        konfirmasi =true
+    do{
+
+        var menu=prompt('Pilih Menu \n1. Login \n2. Register \n3. Exit')
+        switch(menu){
+            case '1' :
+                var masuk=prompt('Masukan Username Anda')
+                if(cek(masuk) == true){
+                    alert('Selamat datang '+masuk)  
+                }else{
+                    alert('Anda siapa? Coba Register Dulu!')
+                }break          
+                
+                case '2':
+                    var register=prompt('Tolong Masukan Nama Anda')
+                    nama.push(register)
+                    alert('Terima Kasih Sudah Register '+register)
+                
+                
+                case '3':
+                    alert('Sampai Jumpa Lagi!')
+                break
+
+        }
+
+        }while(true);
+
+            </script>
+</html>

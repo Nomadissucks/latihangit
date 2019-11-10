@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    
+    #form{
+    border: 2px solid;
+    margin: 16px;
+    padding: 10px;
+}
+
+    </style>
+</head>
+
+<body>
+    <center>
+        <h1>Daftar User</h1>
+        <br>
+        <p id="form">
+             
+            Name: <input type="text" class='new' placeholder="Input Name Here" name="nama1" id="nama" required minlength="3" maxlength="15">
+            <br>
+            <br>
+            Age: <input  type="number" class='new' placeholder="Enter Your Ages" name="umur1" id="age" required>
+            <br>
+            <br>
+            Sex: Male <input type="radio" name="sex" id="sex1" required> Female <input type="radio" name="sex" id="sex1" required>
+            <br>
+            <br>
+            Occupation: <input type="text" class='new' placeholder="Occupation" name="job" id="job1" required>
+            <br>
+            <br>
+            <button onclick="submit()"> Submit </button>
+        </p>
+            <br>
+            <br>
+            <h2> Sort By </h2>
+            <br>
+            <button onclick="sortname()"> Name </button> <button onclick="sortage()"> Age </button> <button onclick="sortsex()"> Sex </button> <button onclick="sortjob()"> Job </button>
+            <br>
+            <h2>User Data</h2>
+            <table id="output"></table>
+    </center>
+</body>
+
+
+<script>
+
+
+function user(a,b,c,d){
+    this.name=a
+    this.age=b
+    this.sex=c
+    this.occupation=d
+}
+var userData=[]
+
+//datauser
+const dataUser=(a)=>{
+    var output = ''
+    a.forEach((val,index) => {
+        if(index==0){
+            output+=`<tr>
+                        <th>No</th>
+                        <th>Name</th>
+                        <th>Age</th>
+                        <th>Sex</th>
+                        <th>Occupation</th>
+                    </tr>
+                    <tr>
+                        <td>${index+1}</td>
+                        <td>${val.name}</td>
+                        <td>${val.age}</td>
+                        <td>${val.sex}</td>
+                        <td>${val.occupation}</td>
+                    </tr>`
+        }else{
+            output+=`<tr>
+                        <td>${index+1}</td>
+                        <td>${val.name}</td>
+                        <td>${val.age}</td>
+                        <td>${val.sex}</td>
+                        <td>${val.occupation}</td>
+                    </tr>`
+        }
+        document.getElementById('output').innerHTML=output
+    });
+}
+dataUser(userData)
+
+const submit=()=>{
+    var sex=''
+    if(document.getElementsByName('sex')[0].checked){
+        sex='Male'
+    }else if(document.getElementsByName('sex')[1].checked){
+        sex='Female'
+    }
+    var occupation=document.getElementById('job1').value
+    var input=document.getElementsByClassName('new')
+    var nama_2=input[0].value
+    var usia_2=input[1].value
+    var sex_2=sex
+    var job_2=input[2].value
+    var baru = new user(nama_2,usia_2,sex_2,job_2)
+    userData.push(baru)
+    dataUser(userData)
+}
+// sort name
+
+const sortname=()=>{
+    for(var i=0;i<userData.length;i++){
+        for(var j = 0;j<userData.length;j++){
+            if(userData[i].name<userData[j].name){
+                temp = userData[i]
+                userData[i]=userData[j]
+                userData[j]=temp
+            }
+        }
+    }
+    document.getElementById('output').innerHTML=userData
+    dataUser(userData)
+}
+//sort age
+
+const sortage=()=>{
+    for(var i=0;i<userData.length;i++){
+        for(var j = 0;j<userData.length;j++){
+            if(parseInt(userData[i].age)<parseInt(userData[j].age)){
+                temp = userData[i]
+                userData[i]=userData[j]
+                userData[j]=temp
+            }
+        }
+}
+document.getElementById('output').innerHTML=userData
+dataUser(userData)
+}
+
+//sort sex
+
+const sortsex=()=>{
+    for(var i=0;i<userData.length;i++){
+        for(var j = 0;j<userData.length;j++){
+            if(userData[i].sex<userData[j].sex){
+                temp = userData[i]
+                userData[i]=userData[j]
+                userData[j]=temp
+            }
+        }
+    }
+    document.getElementById('output').innerHTML=userData
+    dataUser(userData)
+}
+
+//sort job
+
+const sortjob=()=>{
+    for(var i=0;i<userData.length;i++){
+        for(var j = 0;j<userData.length;j++){
+            if(userData[i].occupation<userData[j].occupation){
+                temp = userData[i]
+                userData[i]=userData[j]
+                userData[j]=temp
+            }
+        }
+    }
+    document.getElementById('output').innerHTML=userData
+    dataUser(userData)
+}
+</script>
+
+</html>

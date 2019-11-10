@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+    <h1>Aplikasi Parkir</h1>
+    <br>
+    <h4>Jam Masuk</h4><br>
+    <input type="number" placeholder="Masukan Jam Masuk" id="jam1"><<br>
+    <h4>Jam Keluar</h4><br>
+    <input type="number" placeholder="Masukan Jam Keluar" id="jam2"><br>
+        <br>
+        <button onclick=bayar()> Total </button>
+        <h4></h4>
+    </center>
+</body>
+<script>
+    var bayar=()=>{
+        var masuk=document.getElementById("jam1").value
+        var keluar=document.getElementById("jam2").value
+        var biaya=''
+        var total=keluar-masuk
+        if(total>1){
+            biaya=3000+(keluar-masuk)*2000
+        }else if(total<=1){
+            biaya=3000
+        }
+        document.getElementsByTagName('h4')[2].innerHTML=`Anda Parkir Selama ${total} Jam, Biaya yang harus ada bayar adalah Rp. ${biaya}`
+    }
+</script>
+</html>

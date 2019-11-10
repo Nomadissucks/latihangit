@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        <h1>Biodata Awam</h1>
+        <br>
+        Nama: <input type="text" placeholder="Masukan Nama Anda" id="nama1"><br>
+        Umur: <input type="number" placeholder="Masukan Umur Anda" id="umur1"><br><br>
+        Jenis Kelamin:
+        <input type="radio" name="sex1" value="Laki-laki"> Laki-Laki 
+        <input type="radio" name="sex1" value="Perempuan"> Perempuan <br><br>
+        <button onclick="summary()">Submit</button><br><br>
+        <h3></h3>
+
+</body>
+<script>
+    summary=()=>{
+        var nama=document.getElementById('nama1').value
+        var umur=document.getElementById('umur1').value
+                var kelamin=''
+                if(document.getElementsByName('sex1')[0].checked == true){
+                    kelamin='Saya Pria'
+                }else if(document.getElementsByName('sex1')[1].checked == true){
+                    kelamin='Saya Wanita'
+                }
+                console.log(kelamin)
+                // console.log(document.getElementsByName(('sex1')))
+            document.getElementsByTagName('h3')[0].innerHTML=`Nama Saya ${nama}, Umur saya ${umur} Tahun, ${kelamin}`
+        }
+</script>
+</html>

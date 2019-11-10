@@ -1,0 +1,52 @@
+<html>
+    <script>
+        while(true){
+        var masuk=prompt('masuk parkir jam berapa?')
+        if(masuk>0&&masuk<=12){
+            break
+            }else{
+                alert('salah input bos ')
+            }
+        }
+        do {
+            var konfirmasi=true
+            var kondisi1=prompt('1. A.M / 2. P.M')
+            if(kondisi1==1||kondisi1==2){
+                konfirmasi=false
+            }else{
+                alert('salah input bos ')
+            }
+        } while (konfirmasi)
+        while(true){
+            var keluar=prompt('keluar parkir jam berapa?')
+            if(keluar>1&&keluar<13){
+                break
+            }else{
+                alert('salah input bos ')
+            }
+        }
+        do {
+            var konfirmasi=true
+            var kondisi2=prompt('1. A.M / 2. P.M')
+            if(kondisi2==1||kondisi2==2){
+                konfirmasi=false
+            }else{
+                alert('salah input bos ')
+            }
+        } while(konfirmasi)
+        if(masuk>keluar&&kondisi1==kondisi2){
+keluar+=12
+        }else if(kondisi1==kondisi==2&&masuk>keluar){
+            keluar+=24
+        }
+        var lamaparkir=keluar-masuk
+        var biaya=0
+        if(lamaparkir<2){
+            biaya=3000
+        }else{
+            biaya=3000+(lamaparkir-1)*1000
+        }
+        alert('Anda parkir selama '+lamaparkir+ ' Jam, Biaya yang harus dibayar adalah Rp. '+ biaya)
+        
+    </script>
+</html>

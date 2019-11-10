@@ -1,0 +1,48 @@
+<html>
+    <script>
+        var konfirmasi=true
+        while(konfirmasi){
+        var masuk=parseInt(prompt('Waktu Masuk'))
+        if(masuk>=1&&masuk<=12){
+           var waktu=prompt('(1. Pagi / 2. Malam)')
+            if (waktu==1||waktu==2){
+                if(waktu==2){
+                    masuk=masuk+12
+                }
+            var keluar=parseInt(prompt('Waktu Keluar'))
+            if(keluar>=1&&keluar<=12){
+                var waktu2=prompt('(1. Pagi / 2. Malam)')
+                if (waktu2==1||waktu2==2){
+                    if(waktu2==2){
+                        keluar=keluar+12
+                    }
+            }   
+        }else{
+            alert('Anda salah input')
+            konfirmasi=false
+            }
+            }
+        }if(masuk>=keluar){
+            keluar=keluar+24
+        }
+        var total=keluar-masuk
+        if (total>2){
+            var biaya=5000+(total-1) * 4000
+            alert('Anda Parkir selama ' + total + ' jam' +' biaya yang harus dibayar adalah Rp. ' +biaya)
+            konfirmasi=false
+        }else if(total<2){
+            biaya=3000*total
+            alert('Anda Parkir selama ' + total + ' jam' +' biaya yang harus dibayar adalah Rp. ' +biaya)
+            konfirmasi=false
+        }else{
+            alert('Anda salah input')
+            konfirmasi=confirm('Apakah anda ingin mengulang? ')
+            if(konfirmasi){
+                alert('Mari kita ulang')
+            }else{
+                alert('ayo parkir lagi ')
+            }
+        }
+    }      
+    </script>
+</html>

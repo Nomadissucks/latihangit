@@ -1,0 +1,26 @@
+<html>
+    <script>
+        alert('Selamat datang di website kami! ')
+        do { 
+            var konfirmasi1=true
+            var menu1=prompt('Menu: \n1. Belajar \n2. Belanja \n3. Exit')
+            if (menu1==1){
+                var konfirmasi1=true
+            }
+            while (konfirmasi1){
+                var menu2=prompt('Mau belajar apa? \n1. Luas Segitiga \n2. Luas Persegi')
+                if (menu2==1){
+                    var alastri=parseInt(prompt('masukan alas'))
+                    var tinggitri=parseInt(prompt('masukan tinggi'))
+                    alert('Luas segitiga adalah '+(alastri*tinggitri)/2+'cm^2')
+                }else if(menu2==2){
+                    var sisi=parseInt(prompt('masukan sisi'))
+                    alert('Luas persegi adalah '+(sisi*sisi)+'cm^2')
+                }else{
+                    alert('anda salah input')
+                }
+                konfirmasi1=confirm('mau belajar lagi?')
+            }
+        }while(a)
+            </script>
+</html>

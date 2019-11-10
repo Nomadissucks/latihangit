@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Jadwal Irvan</title>
+    <style>
+        tr,
+        td,
+        table {
+            border: 1px solid indianred;
+            border-collapse: collapse;
+            padding: 10px
+        }
+    </style>
+</head>
+
+<body>
+    <center>
+        <h1>Jadwal Awam</h1>
+        <table id="tabelKegiatan">
+            <thead>
+                <tr>
+                    <td>NO</td>
+                    <td>Todo</td>
+                    <td>Hari</td>
+                    <td>Gambar</td>
+                    <td>ACT</td>
+                </tr>
+            </thead>
+            <tbody>
+                <input type="text" id='myinput' onkeyup="searchfunc()" placeholder="Cari Aktivitas"><br>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td></td>
+                    <td><input type="text" class="addtodo"></td>
+                    <td>
+                        <select class="addtodo">
+                            <option>Senin</option>
+                            <option>Selasa</option>
+                            <option>Rabu</option>
+                            <option>Kamis</option>
+                            <option>Jumat</option>
+                        </select>
+                    </td>
+                    <td><input type="text" class="addtodo"></td>
+                    <td><button onclick="onAddtodoclick()">Add</button></td>
+                </tr>
+            </tfoot>
+        </table>
+    </center>
+
+</body>
+
+<script>
+    class Todo {
+        constructor(a, b, c) {
+            this.Kelakuan = a,
+                this.hari = b,
+                this.gambar = c
+        }
+    }
+
+    var listdata = [
+        new Todo('Coding', 'Senin', 'http://news.efinancialcareers.com/binaries/content/gallery/efinancial-careers/articles/2019/03/programmer.jpg'),
+        new Todo('Futsal', 'Jumat', 'https://d10dnch8g6iuzs.cloudfront.net/picture/39520190622102933698/width/480/height/306'),
+        new Todo('Meeting', 'Kamis', 'https://g.foolcdn.com/editorial/images/446553/meeting_gettyimages-603992138.jpg')
+    ]
+var indexedit=-1
+    const PrintData = (a) => {
+        var output = ''
+        a.forEach((val, index) => {
+            if(index==indexedit){
+
+                output += `<tr>
+                    <td>${index+1}</td>
+                    <td>${val.Kelakuan}</td>
+                    <td>${val.hari}</td>
+                    <td><img src=${val.gambar} height='100px'/></td>
+                    <td><button>Delete</button><button>Edit</button>
+                        </tr>`
+                    }
+                    });
+                    document.getElementsByTagName('tbody')[0].innerHTML=output
+                }
+    PrintData(listdata)
+    const onAddtodoclick=()=>{
+        var input=document.getElementsByClassName('addtodo')
+        var todobaru=input[0].value
+        var haribaru=input[1].value
+        var gambarbaru=input[2].value
+        listdata.push(new Todo(todobaru,haribaru,gambarbaru))
+        PrintData(listdata)
+    }
+     searchfunc(caridata){
+        var input, filter, table, tr, td, i, txtvalue;
+        input=document.getElementById('myinput');
+        filter=input.value.toUpperCase('tbody')
+        table=document.getElementById("tabelKegiatan");
+        tr=table.getElementsByTagName("tr");
+        for(i=0;i<tr.length;i++){
+            td=tr[i].getElementsByTagName("td")[0];
+            if(td){
+                txtvalue=td.textContent||td.innerText;
+                if(txtvalue.toUpperCase().indexOf(filter)>-1){
+                    tr[i].style.display=""
+                }else{
+                    tr[i].style.display="Tidak Ada"
+                }
+            }
+
+        }
+    }
+
+
+</script>
+
+</html>

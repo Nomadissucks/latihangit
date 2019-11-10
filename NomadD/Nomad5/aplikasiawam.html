@@ -1,0 +1,247 @@
+<script>
+    function belanja(barang, harga){
+        jumlah=true
+        while(jumlah){
+            var jumlah=parseInt(prompt('Beli berapa potong?'))
+            if (jumlah>=0 && jumlah<1000){
+                total=harga*jumlah
+                alert('-' + barang + '' + jumlah + 'potong Total Rp' + '\n')
+                jumlah=false
+            }else{
+                alert('input salah')
+                jumlah = true
+            }
+        }
+        return total
+    }
+    var konfirmasiutama=true
+    do{
+        var menuutama=prompt('Menu:\n1. Belanja \n2. Belajar \n3. Segitiga Bintang \n4. Exit')
+        switch(menuutama){
+            case '1':
+                var harga1=0
+                var harga2=0
+                var harga3=0
+                var harga4=0
+                var total1=''
+                var total2=''
+                var total3=''
+                var total4=''
+                do{
+                    var menubelanja=prompt('Mau Belanja Apa? \n1. Sapi (15.000) \n2. Ayam (7.000) \n3. Salmon (10.000) \n4. Kakap (12.000) \n5. Checkout \n6. Exit')
+                    switch(menubelanja){
+                        case '1':
+                            harga1=belanja('Sapi',15000)
+                            total1+='-Sapi, '+ harga1 + '\n'
+                            konfirmasiBelanja = confirm('Mau Belanja Lagi?')
+                            break
+                            
+                        case '2':
+                            harga2=belanja('Ayam', 7500)
+                            total2+= '-Ayam, '+ harga2 +'\n'
+                            konfirmasiBelanja=confirm('Mau Belanja Lagi?')
+                            break
+                            
+                            case '3':
+                            harga3=belanja('Salmon', 10000)
+                            total3+= '-Salmon, '+ harga3 +'\n'
+                            konfirmasiBelanja=confirm('Mau Belanja Lagi?')
+                            break 
+
+                            case '4':
+                            harga4=belanja('Kakap', 7500)
+                            total4+= 'Kakap, '+ harga4 +'\n'
+                            konfirmasiBelanja=confirm('Mau Belanja Lagi?')
+                            break
+
+                            case '5':
+                            konfirmasiBelanja=false
+                            break
+                            
+                            case '6':
+                                konfirmasiBelanja=false
+                                konfirmasiutama=false
+                                break
+
+                                default:
+                                    alert('Salah Input')
+                                    break            
+                    }
+                }while(konfirmasiBelanja)
+                var totalBelanja=(harga1+harga2+harga3+harga4)
+                alert('Daftar Belanja:\n'+total1+total2+total3+total4+'\nTotal Bayar: Rp '+totalBelanja)
+                konfirmasiutama=true
+                break
+
+                case '2':
+                    do{
+                        var menu2belajar=prompt('Mau Belajar Apa? \n1. Luas Segitiga \n2. Luas Persegi \n3. Volume Balok \n4. Exit')
+                        switch(menu2belajar){
+                            case '1':
+                                var alastri=parseInt(prompt('Masukan Alas '))
+                                var tinggitri=parseInt(prompt('Masukan Tinggi'))
+                                alert('Luas segitiga adalah '+(alastri*tinggitri)/2 +' cm^2')
+                                konfirmasibelajar=confirm('Mau Belajar Lagi? ')
+
+                                case '2':
+                                    var sisi=parseInt(prompt('Masukan Sisi'))
+                                    alert('Luas persegi adalah '+(sisi*sisi)+' cm^2')
+                                    konfirmasibelajar=confirm('Mau Belajar Lagi?')
+
+                                case '3':
+                                    var panjang=parseInt(prompt('Masukan Panjang '))
+                                    var lebar=parseInt(prompt('Masukan Lebar '))
+                                    var tinggi=parseInt(prompt('Masukan tinggi? '))
+                                    alert('Volume Balok adalah '+(panjang*lebar*tinggi)+' cm^3 ')
+                                    konfirmasibelajar=confirm('Mau Belajar Lagi?')
+                                case '4':
+                                    konfirmasibelajar=false
+                                    break
+
+                                    default:
+                                        alert('Fitur Belum tersedia')
+                                        konfirmasibelajar=confirm('Mau belajar lagi?')
+                                        break
+
+                        }
+                
+                }while(konfirmasibelajar);
+                konfirmasiutama=true
+
+                break
+
+                case '3':
+                    do{
+                        var menusegitiga=prompt('Mau Bikin Apa? \n1. Segitiga Siku-Siku \n2. Segitiga Sama Kaki \n3.Kembali')
+                        switch(menusegitiga){
+                            case '1':
+                                do{
+                                    var alas=prompt('Segitiga Siku-siku\n1. Alas Atas\n2. Alas Bawah \n3. Kembali')
+                                    switch (alas){
+                                        case '1':
+                                            var n =parseInt(prompt('Masukan Tinggi Segitiga '))
+                                            var siku2atas=''
+                                            for (i = 0;a < n;i++){
+                                                for(j = n-1;j>=i;j--){
+                                                    siku2atas+='*'
+                                                }
+                                                if (i<n-1){
+                                                    siku2atas+='\n'
+                                                }    
+                                            }
+                                            alert('Segitiga Sama Kaki '+ n + 'baris\n' + siku2atas)
+                                            konfirmasisegitiga = true
+                                            break
+
+                                            case'2':
+
+                                            var n=parseInt(prompt('Masukan Tinggi Segitiga'))
+                                            var siku2bawah=''
+                                            for (i=0;i<n;i++){
+                                                for(j = 0;j<=i;j++){
+                                                    siku2bawah+='*'
+                                                }
+                                                if(i<n-1){
+                                                    siku2bawah+='\n'
+                                                }
+                                            }
+                                            alert('Segitiga siku-siku' + n +'baris:\n'+siku2bawah)
+                                            konfirmasisegitiga=true
+                                            break
+                                            case '3':
+                                                konfirmasisegitiga=false
+                                                break
+                                                default:
+                                                    alert('Salah input siku-siku!')
+                                                    konfirmasisegitiga=true
+                                                    break
+                                    }
+                                }while(konfirmasisegitiga);
+                                konfirmasisegitiga=true
+
+                                break
+                                case '2':
+                                    do{
+                                        var alas=prompt('Segitiga Sama Kaki\n1. Alas Atas\n2. Alas Bawah\n3. Kembali')
+                                        switch(alas){
+                                            case '1':
+                                                var n=parseInt(prompt('Masukan tinggi segitiga'))
+                                                var samakaki1=''
+                                                for(a=0;a<n;a++){
+                                                    for(b=0;b<=a;b++){
+                                                        samakaki1+='_'
+                                                    }
+                                                    for(c=n-1;c>a;c--){
+                                                        samakaki1+='*'
+                                                    }
+                                                    for(d=n-1;d>=a;d--){
+                                                        samakaki1+='*'
+                                                    }
+                                                    if(a<=n-1){
+                                                        samakaki1+='\n'
+                                                    }
+                                                }
+                                                alert('Segitiga Sama Kaki'+n+'baris\n'+samakaki1)
+                                                konfirmasisegitiga=true
+                                                break
+
+                                                case '2':
+
+                                                var n=parseInt(prompt('Masukan Tinggi Segitiga'))
+                                                var samakaki2=''
+                                                for(a=0;a<n;a++){
+                                                    for(b=a;b<n-1;b++){
+                                                        samakaki2+='_'
+                                                    }
+                                                    for (c=0; c<=a;c++){
+                                                        samakaki2+='*'
+                                                    }
+                                                    if(a<=b-1){
+                                                        samakaki2+='\n'
+                                                    }
+                                                }
+                                                alert('Segitiga sama kaki '+ n +' baris\n' +samakaki2)
+                                                konfirmasisegitiga=true
+                                                break
+                                                case '3':
+                                                    konfirmasisegitiga=false
+                                                    break
+                                                default:
+                                                    alert('Salah Input')
+                                                    konfirmasisegitiga=true
+                                                    break
+                                        }
+                                    }while(konfirmasisegitiga);
+                                    konfirmasisegitiga=true
+
+                                    break
+                                    case '3':
+                                        konfirmasisegitiga=false
+                                        break
+                                    default:
+                                        alert('salah input data')
+                                        konfirmasisegitiga=true
+                                        break                            
+                        }
+                    }while(konfirmasisegitiga);
+                    konfirmasiutama=true
+
+                    break
+
+                    case'4':
+                    konfirmasiutama=confirm('Apakah anda ingin meninggalkan web?')
+                    if(konfirmasiutama){
+                        konfirmasiutama=false
+                    }else{
+                        konfirmasiutama=true
+                    }
+                    break
+                
+                default:
+                    alert('Menu belum tersedia')
+                    break
+
+        }
+    }while(konfirmasiutama);
+    alert('Terima Kasih sudah mengunjungi web awam kami')
+</script>

@@ -1,0 +1,21 @@
+<html>
+    <script>
+        var berat=parseInt(prompt('masukan berat badan '))
+        var tinggi=parseInt(prompt('masukan tinggi badan')^2)
+       tinggi=tinggi/100
+        var imt=berat/tinggi
+        console.log("berat kamu "+ imt)
+
+        if(imt<18.5){
+            alert('berat kamu kurang ideal')
+        } else if(imt>18.5&&imt<24.9){
+            alert('berat kamu ideal')
+        }else if(imt>25.0&&imt<29.9){
+            alert('berat kamu berlebih')
+        }else if(imt>30.0&&imt<39.9){
+            alert('berat kamu over')
+        }else if(imt>39.9){
+            alert('diet boy!')
+        }
+    </script>
+</html>
