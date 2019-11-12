@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        tr,
+        td,
+        table {
+            border: 1px solid green;
+            border-collapse: collapse;
+            padding: 10px
+        }
+    </style>
+</head>
+
+<body>
+    <center>
+        <h1>Daftar Item</h1>
+        <table id="belanja">
+            <thead>
+                <tr>
+                    <td>Produk</td>
+                    <td>Harga</td>
+                    <td>Gambar Produk</td>
+                    <td>Action</td>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+        <br>
+        <h2>Keranjang Masih Kosong</h2>
+        <h2></h2>
+        <br>
+        <table>
+            <thead></thead>
+            <tbody></tbody>
+        </table>
+    </center>
+</body>
+<script>
+    class itemList {
+        constructor(a, b, c) {
+            this.produk = a,
+                this.harga = b,
+                this.gambar = c
+
+        }
+    }
+
+    var list_belanja = [
+        new itemList('Milo', 5000,
+            'https://www.milo.co.id/sites/milo_projects/milo-global-indonesia/files/styles/full_size/public/new-milo-active-go.jpg?itok=T2XJPqQ0'
+            ),
+        new itemList('Mi Burung Dara', 7500,
+            'https://ecs7.tokopedia.net/img/cache/700/product-1/2018/5/19/0/0_68620500-46cc-4948-9ec9-4d5612b26a24_1050_1050.jpg'
+            ),
+        new itemList('Joki Ulangan', 45000,
+            'https://lambvox39malakian.files.wordpress.com/2012/08/205390_344306382315053_1253526686_n1.jpg')
+    ]
+    const printdata = (a) => {
+        var output = ''
+        a.forEach((val, index) => {
+            output += `<tr>
+                            <td>${val.produk}</td>
+                            <td>${val.harga}</td>
+                            <td><img src=${val.gambar} height='100px'/></td>
+                            <td><button onclick='add(${index})'>Add</button>
+                        <tr>`
+        });
+        document.getElementsByTagName('tbody')[0].innerHTML = output
+
+    }
+    printdata(list_belanja)
+    var keranjang = []
+    const printcart = (x) => {
+        var output = ''
+        var totalharga=0
+        var jumlah=0
+        x.forEach((val, index) => {
+            output += `<tr>
+                            <td>${val.produk}</td>
+                            <td>${val.harga}</td>
+                            <td><img src=${val.gambar} height='100px'/></td>
+                            <td><button onclick='del(${index})'>Delete</button>
+                        <tr>`
+        
+        jumlah++
+        })
+
+
+        for(i=0;i<keranjang.length;i++){
+             totalharga+=keranjang[i].harga
+         }
+        if(jumlah==0){
+            document.getElementsByTagName('h2')[0].innerHTML='Keranjang Masih Kosong'
+            document.getElementsByTagName('h2')[1].innerHTML =''
+        }else{
+            document.getElementsByTagName('h2')[0].innerHTML=`Kamu Belanja total` + jumlah
+            document.getElementsByTagName('h2')[1].innerHTML =`Total Bayar Kamu adalah Rp. `+ totalharga
+        }
+        document.getElementsByTagName('tbody')[1].innerHTML = output
+    }
+    const add = (index) => {
+        keranjang.push(list_belanja[index])
+        printcart(keranjang)
+        console.log(keranjang)
+    }
+    const del = (index) => {
+        keranjang.splice(index,1)
+        printcart(keranjang)
+    }
+
+    var time = 30
+    var timer
+    function start(){
+        time=time+1
+        timer=setInterval(waktu,1000)
+    }
+    function waktu(){
+        time--
+        document.getElementById('timer').innerHTML=`waktu tersisa ${time}`
+        if (time<=0){
+            clearInterval(timer)
+            alert('waktu checkout habis...')
+            list_belanja=[]
+            document.getElementsByTagName('h2')[0].innerHTML='Keranjang masih Kosong'
+            document.getElementById('keranjang').innerHTML=''
+            document
+        }
+    }
+     
+     
+
+</script>
+
+</html>
