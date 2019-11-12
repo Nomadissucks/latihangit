@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login</title>
+    <style>
+        #log{
+            border: 1px solid black
+
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <h1>Login Page</h1>
+        <br>
+        <p class="log">
+            Username: <input type="text" name="login" id="user" required><br>
+            Password: <input type="password" name="login" id="pass"required><br>
+            <button onclick="register()">register</button><button onclick="Login()">Login</button>
+            <br>
+            <h1></h1>
+            <h1></h1>
+            <p></p>
+        </p>
+    </center>
+</body>
+<script>
+    class User{
+        constructor(a,b,c){
+            this.username=a,
+            this.password=b,
+            this.role=c
+        }
+    }
+
+
+    var datauser ={}
+
+    const login=()=>{
+        var username=document.getElementById('user').value
+        var password=document.getElementById('pass').value
+        var login=false
+        for(var i=0; i<datausers.length;i++){
+            if(username==datausers[i].username&&pass=datausers[i].password){
+                login=true
+                datauser=datausers[i]
+            }
+        }
+        if(login){
+            document.getElementsByTagName('h2')[0].innerHTML=datauser.username
+            if(datauser.role=='admin'){
+                document.getElementsByTagName('h2')[1].innerHTML='Sebagai Admin'
+            }else{
+                document.getElementsByTagName('h2')[1].innerHTML='Sebagai User'
+            }
+            document.getElementsByTagName('p')[1].innerHTML=`<button onclick='logout()'>Log Out</button>`
+        }else{
+            document.getElementsByTagName('h2')[0].innerHTML='Data anda Salah'
+            document.getElementsByTagName('h2')[1].innerHTML=''
+        }
+    }
+    const logout=()=>{
+        datauser={}
+        document.getElementsByTagName('h2')[0].innerHTML='Data anda Salah'
+        document.getElementsByTagName('h2')[1].innerHTML=''
+    }
+
+
+</script>
+</html>
