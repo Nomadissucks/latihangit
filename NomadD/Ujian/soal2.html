@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h1>Mading</h1>
+        <br>
+        Username: <input type="text" name="username" id="usernam" placeholder="Input your username here"/>
+        <br>
+        <br>
+        Password: <input type="password" name="password" id="passWord" placeholder="Input Password Here"/>
+        <br>
+        <br>
+        <button onclick="login()">Login</button>
+        <br>
+        
+        <table id="tabelMading">
+            <thead>
+                <tr>
+                    <td>No</td>
+                    <td>Kegiatan</td>
+                    <td>Hari</td>
+                    <td>Poster</td>
+                    <td>Action</td>
+                </tr>
+            </thead>
+            <tbody></tbody>
+            <tfoot>
+                
+            </tfoot>
+        </table>
+        <h2></h2>
+        <h2></h2>
+        <p></p>
+    </center>
+</body>
+<script>
+    class User{
+        constructor(a,b,c){
+            this.username=a,
+            this.password=b,
+            this.role=c
+        }
+    }
+
+    var listTerdaftar=[
+        new User('admin', 'admin1', 'admin'),
+        new User('irvan', '1234', 'user'),
+    ]
+
+    var datauserLogin={}
+
+    const login=()=>{
+        var username=document.getElementById('usernam').value
+        var password=document.getElementById('passWord').value
+        var login=false
+        for(var i=0;i<listTerdaftar.length;i++){
+            if(username==listTerdaftar[i].username&&password==listTerdaftar.password){
+                login=true
+                datauserLogin=listTerdaftar[i]
+            }
+        }
+        var arrbaru=listTerdaftar.filter((val)=>val.username==username&&val.password==password)
+        datauserLogin=arrbaru[0]
+        
+        if(datauserLogin){
+            document.getElementsByTagName('h2')[0].innerHTML=datauserLogin.username
+            if(datauserLogin.role=='admin'){
+                document.getElementsByTagName('h2')[1].innerHTML='Admin'
+                var indexedit=-1
+                var indexdelete=-2
+                const printKegiatan=(a)=>{
+                    var output=''
+                    a.forEach((val,index)=>{
+                        if(index==indexedit){
+
+                            output+=`<tr>
+                                <td>${index+1}</td>
+                                <td>${val.Kegiatan}</td>
+                                <td>${val.Hari}</td>
+                                <td><img src=${val.Poster} height='100px'/></td>
+                                <td><button onclick="edit()">edit</button><button onclick="delete()">Delete</button></tr>`
+                        }
+                    });
+                    document.getElementsByTagName('tbody')[0].innerHTML=output
+                    document.getElementsByTagName('tfoot')[0].innerHTML=`<button onclick='add()'>Add</button>`
+                }
+            }else{
+                document.getElementsByTagName('h2')[1].innerHTML='User'
+            }
+            document.getElementsByTagName('p')[0].innerHTML=`<button onclick="logout()">Logout<button>`
+        }else{
+            document.getElementsByTagName('h2')[0].innerHTML='User tidak ditemukan'
+            document.getElementsByTagName('h2')[1].innerHTML=''
+            document.getElementsByTagName('p')[0].innerHTML=''
+        }
+    }
+
+    const logout=()=>{
+        datauserLogin={}
+        document.getElementsByTagName('h2')[0].innerHTML=''
+        document.getElementsByTagName('h2')[1].innerHTML=''
+        document.getElementsByTagName('p')[0].innerHTML=''
+    }
+
+class kontenMading{
+    constructor(a,b,c){
+        this.Kegiatan=a,
+        this.Hari=b,
+        this.Poster=c
+    }
+}
+
+var listdata=[
+    new Kegiatan('Berenang','Selasa', ''),
+    new Kegiatan('Sepakbola', 'Jumat', ''),
+    new Kegiatan('TataBoga', 'Sabtu', '')
+]
+
+printData(listdata)
+const add=()=>{
+    var input=document.getElementsByClassName('addtodo')
+    var kegiatanbaru=input[0].value
+    var haribaru=input[1].value
+    var posterbaru=input[2].value
+    listdata.push(new Kegiatan(kegiatanbaru,haribaru,posterbaru))
+    printData(listdata)
+}
+
+
+</script>
+</html>
