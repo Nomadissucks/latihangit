@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login</title>
+    <style>
+        form{
+            border: 2px solid black;
+            border-collapse: collapse;
+            padding: 10px
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <form name="logForm">
+            <h1>Login</h1>
+            Username: <input type='text' name='user' id='username'/><br>
+            Password: <input type='password' name='pass' id='password'/><br>
+            <button onclick="login()">Login</button><button onclick="register()">register</button>
+        </form>
+        <h1></h1>
+    </center>
+</body>
+<script>
+    class User{
+        constructor(user,password,role){
+            this.userName=user;
+            this.passWord=password;
+            this.roLe=role;
+        }   
+    }
+    var listTerdaftar=[
+        new User('Irvan', 441, 'Admin'),
+        new User('Kenang', 311, 'User'),
+        new User('Paksi', 541, 'User')
+    ]
+    var listUser={}
+
+    const login=()=>{
+        var usrname=document.getElementById('username').value
+        var psswrd=document.getElementById('password').value
+        var login=false
+        for(var i=0;i<listTerdaftar.length;i++){
+            if(usrname==listTerdaftar[i].usrname&&psswrd==listTerdaftar[i].psswrd){
+                login=true
+                listUser=listTerdaftar[i]
+            }
+        }
+        if(login){
+            document.getElementsByTagName('h1')[1].innerHTML=listTerdaftar.usrname
+            if(listTerdaftar.role=='Admin'){
+                document.getElementsByTagName('h1')[1].innerHTML='Sebagai Admin'
+            }else{
+                document.getElementsByTagName('h1')[1].innerHTML='Sebagai User'
+            }
+        }else{
+            document.getElementsByTagName('h1')[1].innerHTML='Invalid data or password'
+        }
+    }
+    const logout=()=>{
+        listUser={}
+        document.getElementsByTagName('table')[0].innerHTML=''
+    }
+</script>
+</html>

@@ -62,5 +62,3 @@ function getDomain(domain){
 console.log(getDomain('https://www.youtube.com/')) //youtube
 console.log(getDomain('https://www.twitter.com/')) //twitter
 console.log(getDomain("http://www.zombie-bites.com")) //zombie-bites
-
-//end of domain

@@ -1,0 +1,77 @@
+.container{
+    display: flex;
+    font-family: 'Courier New', Courier, monospace;
+    color: cornsilk;
+    text-align: center;
+    font-size: 30px;
+    flex-wrap: wrap;
+
+}
+
+.one{
+    flex:1;
+    background-color: black;
+    border: 1px solid black;
+    width: 30vh;
+    height: 30vh;
+}
+
+.two{
+    flex:1;
+    background-color: blue;
+    border: 1px solid blue;
+    width: 30vh;
+    height: 30vh;
+}
+
+.three{
+    flex:1;
+    background-color:black;
+    border: 1px solid black;
+    width: 30vh;
+    height: 30vh;
+}
+
+.four{
+    flex:1;
+    background-color: blue;
+    border: 1px solid blue;
+    width: 30vh;
+    height: 30vh;
+}
+.five{
+    flex:1;
+    background-color:black;
+    border: 1px solid black;
+    width: 30vh;
+    height: 30vh;
+
+}
+.six{
+    flex:1;
+    background-color: blue;
+    border: 1px solid blue;
+    width: 30vh;
+    height: 30vh;
+}
+.seven{
+    flex:1;
+    background-color:black;
+    border: 1px solid black;
+    width: 30vh;
+    height: 30vh;
+}
+.eight{
+    flex:1;
+    background-color: blue;
+    border: 1px solid blue;
+    width: 30vh;
+    height: 30vh;
+}
+.nine{
+    flex:1;
+    background-color:black;
+    border: 1px solid black;
+    width: 30vh;
+    height: 30vh;
+}

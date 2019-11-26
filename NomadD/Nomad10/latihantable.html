@@ -85,6 +85,7 @@ var indexedit=-1
                     }
                     });
                     document.getElementsByTagName('tbody')[0].innerHTML=output
+                    document.getElementsByTagName('tfoot')[0].innerHTML=`<button onclick='add()'>Add</button>`
                 }
     PrintData(listdata)
     const onAddtodoclick=()=>{

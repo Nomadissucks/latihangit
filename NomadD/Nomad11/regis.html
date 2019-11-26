@@ -61,16 +61,17 @@ function user(a,b,c,d){
 var userData=[]
 
 //datauser
+
 const dataUser=(a)=>{
     var output = ''
     a.forEach((val,index) => {
         if(index==0){
             output+=`<tr>
-                        <th>No</th>
-                        <th>Name</th>
-                        <th>Age</th>
-                        <th>Sex</th>
-                        <th>Occupation</th>
+                        <td>No</td>
+                        <td>Name</td>
+                        <td>Age</td>
+                        <td>Sex</td>
+                        <td>Occupation</td>
                     </tr>
                     <tr>
                         <td>${index+1}</td>

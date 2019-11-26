@@ -61,17 +61,18 @@
 //     return angka2
 // }
 // console.log(angkaurut(100))
-// function permen(hari){
+function permen(hari){
 
-//     var output=0
-//     for(i=1;i<=hari;i++){
-//         if(i%10==0){
-//             output+=2
-//         }else if(i%2==0){
-//             output++
-//         }
-//     }return output
-// }console.log(permen(100))
+    var output=0
+    for(i=1;i<=hari;i++){
+        if(i%10==0){
+            output+=2
+        }else if(i%2==0){
+            output++
+        }
+    }return output
+    
+}console.log(permen(100))
 
 function output(angka){
     var output=''

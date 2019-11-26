@@ -1,0 +1,203 @@
+*{
+    padding:0;
+    margin:0;
+
+}
+:root{
+    --ukuran-font:16px;
+    --latar-color:#0b1125;
+    --button-color:#e94040;
+    --text-color:white;
+}
+body{
+    font-family: 'Lato', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+}
+
+/*start of header*/
+
+
+.header-container{
+    font-size: var(--ukuran-font);
+    color:var(--text-color);
+    background-color: var(--latar-color);
+    padding: 20px 40px;
+    display: flex;
+}
+.menu-kanan{
+    margin-left: auto;
+    padding-top: 0px;
+    display: flex;
+
+}
+.logo-jw{
+    margin-right: 20px;
+}
+.menu-kiri{
+    
+    padding-top: 12px;
+    display: flex;
+}
+.menu{
+    font-weight: 300;
+    margin-right: 30px;
+    transition: 600ms;
+}
+
+.menu span{
+    font-size: 12px;
+}
+.sign-in{
+    margin-right: 30px;
+    margin-top: 12px;
+}
+.menu-kanan .get-started{
+    border: 2px solid var(--button-color);
+    width: 130px;
+    border-radius: 25px;
+    padding-top: 10px;
+    padding-bottom: 0px;
+    padding-left:25px;
+
+    
+}
+.menu-kanan span{
+    margin-left: 10px;
+    color: var(--button-color);
+}
+.menu:hover{
+    color:var(--button-color);
+    cursor: pointer;
+}
+.bars{
+    display: none;
+}
+/*header end*/
+
+
+
+
+
+
+
+/*jumbotron start*/
+
+.jumbotron-container{
+    background-color: var(--latar-color);
+    height: 120vh;
+    padding-top: 88px;
+    color:white; 
+}
+.jumbotron-component{
+    padding-top: 90px;
+}
+.jumbotron-textbig{
+    text-align: center;
+    font-size: 56px;
+    font-family: 'Overpass', sans-serif;
+    font-weight: 900;
+}
+
+.konten-jumbo1{
+    text-align: center;
+    font-size: 24px;
+    line-height: 38.4px;
+    font-family: 'Lato', sans-serif;
+    
+}
+.button-container{
+    display: flex;
+    justify-content: center;
+}
+.jumbotron-button{
+    text-align: center;
+    margin-top: 20px;
+    border: 2px solid var(--button-color);
+    border-radius: 25px;
+    letter-spacing: 1px;
+    padding-top: 7px;
+    padding-bottom: 10px;
+    padding-right: 25px;
+    padding-left: 25px;
+    background-color: var(--button-color)
+}
+.jumbotron-images{
+    padding-top: 96px;
+    height: 700px;
+    width: 750px;
+    margin: auto;
+
+
+
+
+}
+.main-images{
+    position: relative;
+    border-radius:15px;
+    z-index: 1;
+}
+
+.second-image{
+    position: absolute;
+    top:90%;
+    left:9%;
+    z-index: 2;
+
+}
+.fourth-image{
+    position: absolute;
+    top: 70%;
+    right:14%;
+    z-index: 3;
+}
+.third-image{
+    position:absolute;
+    top:79%;
+    right:8%;
+    z-index: 4;
+}
+/*end of jumbotron*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*for tablet stat*/
+@media only screen and (max-width:1200px){
+    .menu-kiri{
+        display: none;
+    }
+    .menu-kanan{
+        display: none;
+    }
+    .bars{
+        display:block;
+        margin-left:auto;
+        margin-top: 10px;
+        
+    }
+     .logo{
+        height: 35px;
+        width: 90px;
+    }
+    .header-container{
+        padding: 10px 40px;
+    }
+}
