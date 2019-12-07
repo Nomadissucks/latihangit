@@ -1,0 +1,107 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "admin",
+      "password": "admin123"
+    },
+    {
+      "id": 2,
+      "username": "irvan",
+      "password": "qwe"
+    },
+    {
+      "id": 3,
+      "username": "dobleh",
+      "password": "asd"
+    }
+  ],
+  "movies": [
+    {
+      "id": 1,
+      "title": "The Shawshank Redemption",
+      "sutradara": "Frank Darabont",
+      "sinopsis": "Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency",
+      "image": "https://m.media-amazon.com/images/M/MV5BMDFkYTc0MGEtZmNhMC00ZDIzLWFmNTEtODM1ZmRlYWMwMWFmXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_UX182_CR0,0,182,268_AL_.jpg",
+      "genre": "Action",
+      "produksi": "Paramount Pictures",
+      "durasi": 24,
+      "jadwal": [
+        12,
+        14,
+        16
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Dr. Stone",
+      "sutradara": "Joshua Suherman",
+      "sinopsis": "Dokter Batu",
+      "image": "https://img.anime2you.de/2018/11/dr-stone-visual-612x1024.jpg",
+      "genre": "Adventure",
+      "produksi": "Kimia Farma",
+      "durasi": 24,
+      "jadwal": [
+        12,
+        14,
+        16
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Foodwars: The Fourth Plate",
+      "sutradara": "Candil",
+      "sinopsis": "Lomba Masak",
+      "image": "https://d3ieicw58ybon5.cloudfront.net/full/u/784cca1a6bf04053b8c88235fe2eb9e2.jpg",
+      "genre": "Adventure",
+      "produksi": "Bayer",
+      "durasi": 24,
+      "jadwal": [
+        12,
+        14,
+        16
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Vinland Saga",
+      "sutradara": "Anang Hermansyah",
+      "sinopsis": "Film Petualangan",
+      "image": "https://1.bp.blogspot.com/-vqacvA28bQ4/XbqjFqQQleI/AAAAAAAAA9Y/4MTkgtS_wn4FY5C0yd3rRotRLQYTKfXyACLcBGAsYHQ/s320/images%2B%25282%2529.jpeg",
+      "genre": "Adventure",
+      "produksi": "Spacetoon",
+      "durasi": 24,
+      "jadwal": [
+        12,
+        14,
+        16
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Demon Slayer",
+      "sutradara": "Tomas Pureklolon",
+      "sinopsis": "Film Ngebantai Shaiton",
+      "image": "https://www.jposter.net/images/products/b5-kimetsu.jpg",
+      "genre": "Adventure",
+      "produksi": "Digital Playground",
+      "durasi": 24,
+      "jadwal": [
+        12,
+        14,
+        16
+      ]
+    },
+    {
+      "title": "",
+      "image": "",
+      "sinopsis": "",
+      "sutradara": "",
+      "genre": "",
+      "durasi": "",
+      "produksi": "Kimia Farma",
+      "jadwal": [],
+      "id": 6
+    }
+  ]
+}
