@@ -65,7 +65,10 @@ class ManageAdmin extends Component {
       });
   };
 
-  onFilmEdit = index => {};
+  onFilmEdit = index => {
+    this.setState({indexedit:index});
+    this.renderMovies();
+  };
 
   renderMovies = () => {
     const { indexedit } = this.state;
@@ -98,11 +101,19 @@ class ManageAdmin extends Component {
                 placeholder="Enter Synopsis"
               />
             </TableCell>
+            <TableCell>
+              <input type="text" ref="editsutradara" defaultValue={val.sutradara} placeholder="Enter New Producer"/>
+            </TableCell>
+            <TableCell>
+              <input type="number" ref="editdurasi" defaultValue={val.durasi} placeholder="Enter New Duration"/>
+            </TableCell>
+            <TableCell>
+              <button>Save</button>
+              <button>Cancel</button>
+            </TableCell>
           </TableRow>
         );
       }
-    });
-    return this.state.datafilm.map((val, index) => {
       return (
         <TableRow key={index}>
           <TableCell>{index + 1}</TableCell>
@@ -116,7 +127,7 @@ class ManageAdmin extends Component {
               <span
                 style={{ color: "blue", cursor: "pointer" }}
                 onClick={() => this.setState({ readmoreselected: -1 })}
-              >
+                >
                 Read Less
               </span>
             </TableCell>
@@ -127,7 +138,7 @@ class ManageAdmin extends Component {
               <span
                 style={{ color: "blue", cursor: "pointer" }}
                 onClick={() => this.setState({ readmoreselected: index })}
-              >
+                >
                 Read More
               </span>
             </TableCell>
@@ -135,12 +146,13 @@ class ManageAdmin extends Component {
           <TableCell>{val.sutradara}</TableCell>
           <TableCell>{val.durasi}</TableCell>
           <TableCell>
-            <button className="btn btn-outline-primary">Edit</button>
+            <button className="btn btn-outline-primary" onClick={()=>this.onFilmEdit}>Edit</button>
             <button className="btn btn-outline-danger">Delete</button>
           </TableCell>
         </TableRow>
       );
-    });
+      
+    })
   };
 
   render() {
