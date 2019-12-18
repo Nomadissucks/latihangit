@@ -1,0 +1,284 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "admin",
+      "password": "123",
+      "role": "admin"
+    },
+    {
+      "id": 2,
+      "username": "irvan",
+      "password": "123",
+      "role": "user"
+    },
+    {
+      "id": 3,
+      "username": "james",
+      "password": "123",
+      "role": "user"
+    },
+    {
+      "username": null,
+      "password": null,
+      "role": "user",
+      "id": 4
+    },
+    {
+      "username": null,
+      "password": null,
+      "role": "user",
+      "id": 5
+    },
+    {
+      "username": null,
+      "password": null,
+      "role": "user",
+      "id": 6
+    },
+    {
+      "username": null,
+      "password": null,
+      "role": "user",
+      "id": 7
+    },
+    {
+      "username": null,
+      "password": null,
+      "role": "user",
+      "id": 8
+    },
+    {
+      "username": null,
+      "password": null,
+      "role": "user",
+      "id": 9
+    }
+  ],
+  "studios": [
+    {
+      "id": 1,
+      "nama": "studio 1",
+      "jumlahKursi": 260
+    },
+    {
+      "id": 2,
+      "nama": "studio 2",
+      "jumlahKursi": 260
+    },
+    {
+      "id": 3,
+      "nama": "studio 3",
+      "jumlahKursi": 260
+    }
+  ],
+  "movies": [
+    {
+      "title": "Inception",
+      "image": "https://m.media-amazon.com/images/M/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_UX182_CR0,0,182,268_AL_.jpg",
+      "sinopsis": "A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.",
+      "jadwal": [
+        12,
+        16,
+        20
+      ],
+      "trailer": "",
+      "studioId": "1",
+      "sutradara": "Christopher Nolan",
+      "durasi": "",
+      "genre": "Drama",
+      "produksi": "",
+      "id": 1
+    },
+    {
+      "id": 2,
+      "title": "Jumanji: The Next Level",
+      "year": 2019,
+      "sutradara": "Jake Kasdan",
+      "sinopsis": "In Jumanji: The Next Level, the gang is back but the game has changed. As they return to rescue one of their own, the players will have to brave parts unknown from arid deserts to snowy mountains, to escape the world's most dangerous game.",
+      "duration": 123,
+      "image": "https://m.media-amazon.com/images/M/MV5BOTVjMmFiMDUtOWQ4My00YzhmLWE3MzEtODM1NDFjMWEwZTRkXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_UX182_CR0,0,182,268_AL_.jpg",
+      "trailer": "",
+      "studioId": "2",
+      "jadwal": [
+        12,
+        14,
+        16,
+        18,
+        20,
+        22
+      ],
+      "genre": "Adventure"
+    },
+    {
+      "id": 3,
+      "title": "The Space Between Us",
+      "year": 2017,
+      "sutradara": "Peter Chelsom",
+      "sinopsis": "The first human born on Mars travels to Earth for the first time, experiencing the wonders of the planet through fresh eyes. He embarks on an adventure with a street smart girl to discover how he came to be.",
+      "duration": 108,
+      "image": "https://m.media-amazon.com/images/M/MV5BNjYzODU1OTkwN15BMl5BanBnXkFtZTgwMDA3MTMwMDI@._V1_UX182_CR0,0,182,268_AL_.jpg",
+      "trailer": "",
+      "studioId": "2",
+      "jadwal": [
+        12,
+        14,
+        16
+      ],
+      "genre": "Sci-fi"
+    },
+    {
+      "id": 4,
+      "title": "Ex Machina",
+      "year": 2014,
+      "sutradara": "Alex Garland",
+      "sinopsis": "A young programmer is selected to participate in a ground-breaking experiment in synthetic intelligence by evaluating the human qualities of a highly advanced humanoid A.I.",
+      "duration": 111,
+      "image": "https://m.media-amazon.com/images/M/MV5BMTUxNzc0OTIxMV5BMl5BanBnXkFtZTgwNDI3NzU2NDE@._V1_UX182_CR0,0,182,268_AL_.jpg",
+      "trailer": "",
+      "studioId": "2",
+      "jadwal": [
+        12,
+        14,
+        16
+      ],
+      "genre": "Sci-fi"
+    }
+  ],
+  "orders": [
+    {
+      "id": 1,
+      "userId": 2,
+      "movieId": 3,
+      "jadwal": 12,
+      "totalharga": 50000,
+      "bayar": false
+    },
+    {
+      "id": 2,
+      "userId": 3,
+      "movieId": 3,
+      "jadwal": 14,
+      "totalharga": 50000,
+      "bayar": false
+    },
+    {
+      "id": 3,
+      "userId": 2,
+      "movieId": 3,
+      "jadwal": 14,
+      "totalharga": 50000,
+      "bayar": false
+    },
+    {
+      "userId": 2,
+      "movieId": 1,
+      "totalHarga": 150000,
+      "jadwal": 12,
+      "bayar": false,
+      "id": 4
+    },
+    {
+      "userId": 2,
+      "movieId": 1,
+      "totalHarga": 100000,
+      "jadwal": 12,
+      "bayar": false,
+      "id": 5
+    },
+    {
+      "userId": 2,
+      "movieId": 1,
+      "totalHarga": 100000,
+      "jadwal": 12,
+      "bayar": false,
+      "id": 6
+    },
+    {
+      "userId": 2,
+      "movieId": 1,
+      "totalHarga": 100000,
+      "jadwal": 12,
+      "bayar": false,
+      "id": 7
+    },
+    {
+      "userId": 2,
+      "movieId": 1,
+      "totalHarga": 100000,
+      "jadwal": 12,
+      "bayar": false,
+      "id": 8
+    },
+    {
+      "userId": 2,
+      "movieId": 1,
+      "totalHarga": 100000,
+      "jadwal": 12,
+      "bayar": false,
+      "id": 9
+    },
+    {
+      "userId": 2,
+      "movieId": 3,
+      "totalHarga": 100000,
+      "jadwal": 12,
+      "bayar": false,
+      "id": 10
+    },
+    {
+      "userId": 2,
+      "movieId": 3,
+      "totalHarga": 100000,
+      "jadwal": 12,
+      "bayar": false,
+      "id": 11
+    },
+    {
+      "userId": 2,
+      "movieId": 4,
+      "totalHarga": 100000,
+      "jadwal": 12,
+      "bayar": false,
+      "id": 12
+    }
+  ],
+  "ordersdetails": [
+    {
+      "id": 1,
+      "orderId": 1,
+      "row": 2,
+      "seat": 4
+    },
+    {
+      "id": 2,
+      "orderId": 1,
+      "row": 2,
+      "seat": 5
+    },
+    {
+      "id": 3,
+      "orderId": 2,
+      "row": 2,
+      "seat": 6
+    },
+    {
+      "id": 4,
+      "orderId": 2,
+      "row": 2,
+      "seat": 7
+    },
+    {
+      "id": 5,
+      "orderId": 3,
+      "row": 2,
+      "seat": 8
+    },
+    {
+      "id": 6,
+      "orderId": 3,
+      "row": 2,
+      "seat": 9
+    }
+  ]
+}
